@@ -19,3 +19,30 @@ def play_hangman():
 
    print('Thanks For Playing! We expect you back again!')
    exit()
+   if __name__ == '__main__':
+  play_hangman()
+              
+
+      if guess in guessed:
+          print('Oops! You already tried that guess, try again!\n')
+          continue
+
+      if guess in letters:
+          letters.remove(guess)
+          index = word.find(guess)
+          display = display[:index] + guess + display[index + 1:]
+
+      else:
+          guessed.append(guess)
+          count += 1
+          if count == 1:
+              time.sleep(1)
+              print('   _____ \n'
+                    '  |      \n'
+                    '  |      \n'
+                    '  |      \n'
+                    '  |      \n'
+                    '  |      \n'
+                    '  |      \n'
+                    '__|__\n')
+              print(f'Wrong guess: {limit - count} guesses remaining\n')
